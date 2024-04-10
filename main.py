@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request
 from langchain.llms import OpenAI
 import os
@@ -14,10 +13,11 @@ def generate_response(input_text):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
+#for checking connection
 try:
-  print(generate_response("Are you there?"))
-except:
-  print("fuck off")
+    print(generate_response("Are you there?"))
+except Exception as e:
+    print(f"fuck off: {e}")
     
 @app.route('/', methods=['GET', 'POST'])
 def index():
