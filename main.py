@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from langchain.llms import OpenAI
+#from langchain.llms import OpenAI
+from langchain_openai import ChatOpenAI
 import os
 
 app = Flask(__name__)
@@ -8,7 +9,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 def generate_response(input_text):
     try:
-        llm = OpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY)
+        llm = ChatOpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY)
         return llm(input_text)
     except Exception as e:
         print(f"An error occurred: {e}")
