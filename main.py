@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-OPENAI_API_KEY = ""
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 def generate_response(input_text):
     try:
@@ -14,7 +14,11 @@ def generate_response(input_text):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-
+try:
+  print(generate_response("Are you there?"))
+except:
+  print("fuck off")
+    
 @app.route('/', methods=['GET', 'POST'])
 def index():
     poem = None
