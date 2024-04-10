@@ -1,4 +1,4 @@
-# app.py
+
 from flask import Flask, render_template, request
 from langchain.llms import OpenAI
 import os
