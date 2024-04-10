@@ -15,7 +15,7 @@ def index():
     if request.method == 'POST':
         poem_title = request.form['poem_title']
         lang = request.form['language']
-        prompt = f"You are a very good and creative poem writer, write a poem for me on title {poem_title}, generate this poem in {lang} language."
+        prompt = f'''You are a very good and creative poem writer, write a poem for me on title "{poem_title}", generate this poem in "{lang}" language.'''
         poem = generate_response(prompt)
     return render_template('index.html', poem=poem)
 
