@@ -25,10 +25,10 @@ def index():
         poem_title = request.form.get('poem_title', '')
         lang = request.form.get('language', '')
         if lang:
-            prompt = f'''You are a very good and creative poem writer, write a poem for me on title "{poem_title}", generate this poem in "{lang}" language.'''
+            prompt = f'''You are a very good and creative poem writer, write a poem for me on title "{poem_title}", generate this poem in "{lang}" language. Please note if you can't generate the poem on given topic or you can'nt understand the given topic then simply say "I can't do it" nothing else or any other excuse.'''
             poem = generate_response(prompt)
         else:
-            prompt = f'''You are a very good and creative poem writer, write a poem for me on title "{poem_title}", generate this poem in "English" language.'''
+            prompt = f'''You are a very good and creative poem writer, write a poem for me on title "{poem_title}", generate this poem in "English" language.Please note if you can't generate the poem on given topic or you can'nt understand the given topic then simply say "I can't do it" nothing else or any other excuse.'''
             poem = generate_response(prompt)
     return render_template('index.html', poem=poem)
     
