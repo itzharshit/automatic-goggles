@@ -35,13 +35,14 @@
     </div>
 <!-- below js function is copied from stack overflow to save the fields data in browser session -->
     <script>
-        function submitForm() {
+        function submitForm(event) {
+        event.preventDefault()
             var language = document.getElementById('language').value;
             var title = document.getElementById('poem_title').value;
             sessionStorage.setItem('selectedLanguage', language);
             sessionStorage.setItem('enteredTitle', title);
             return true;
-        }
+          }
         window.onload = function() {
             var selectedLanguage = sessionStorage.getItem('selectedLanguage');
             var enteredTitle = sessionStorage.getItem('enteredTitle');
