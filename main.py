@@ -13,11 +13,11 @@ def generate_response(input_text):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-#for checking connection
+
 try:
     print(generate_response("Are you there?"))
 except Exception as e:
-    print(f"fuck off: {e}")
+    print(f"An error occurred: {e}")
     
 @app.route('/', methods=['GET', 'POST'])
 def index():
