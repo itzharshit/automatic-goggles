@@ -13,7 +13,6 @@ def generate_response(input_text):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-
 try:
     print(generate_response("Are you there?"))
 except Exception as e:
@@ -33,7 +32,5 @@ def index():
             poem = generate_response(prompt)
     return render_template('index.html', poem=poem)
     
-
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
