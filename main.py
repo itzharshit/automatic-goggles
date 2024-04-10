@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from langchain.llms import OpenAI
-from langchain_openai import ChatOpenAI
 import os
 
 app = Flask(__name__)
